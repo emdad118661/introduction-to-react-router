@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -28,6 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/users",
+        loader: () => fetch('https://jsonplaceholder.typicode.com/users'),
         element: <Users></Users>
       }
 
